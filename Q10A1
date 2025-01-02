@@ -1,0 +1,19 @@
+#Q10. Python program to compare the two lists of customer names using the FuzzyWuzzy(package - fuzzywuzzy[python-levenshtein])
+
+from fuzzywuzzy import fuzz
+from fuzzywuzzy import process
+
+list1 = ['John Doe', 'Jane Smith', 'Mary Jane', 'William Brown']
+list2 = ['Jon Doe', 'Jane Smtih', 'Marie Jane', 'William Browne']
+
+def compare_names(list1, list2):
+    matches = []
+    for name1 in list1:
+        best_match = process.extractOne(name1, list2, scorer=fuzz.ratio)
+        matches.append((name1, best_match[0], best_match[1]))  
+    return matches
+
+results = compare_names(list1, list2)
+
+for name1, name2, score in results:
+    print(f"{name1} matches with {name2} with a similarity score of {score}")
