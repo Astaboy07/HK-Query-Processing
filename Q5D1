@@ -1,0 +1,19 @@
+#5.	Write a Pandas program to create a bar plot of the trading volume of Alphabet Inc. stock between two specific dates.
+
+import yfinance as yf
+import matplotlib.pyplot as plt
+
+tickerSymbol = 'GOOGL'
+startDate = '2023-01-01'
+endDate = '2023-12-31'
+
+data = yf.download(tickerSymbol, start=startDate, end=endDate)
+
+plt.figure(figsize=(8, 6))
+plt.boxplot(data['Close'].dropna(), vert=True, patch_artist=True, boxprops=dict(facecolor='skyblue'))
+
+plt.ylabel('Closing Price (USD)')
+plt.title('Boxplot of Alphabet Inc. Closing Prices (' + startDate + ' - ' + endDate + ')')
+plt.grid(axis='y')
+
+plt.show()
