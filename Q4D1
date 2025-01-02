@@ -1,0 +1,19 @@
+#4.	Write a Pandas program to create a line plot of the historical stock prices of Alphabet Inc. between two specific dates.
+
+import yfinance as yf
+import matplotlib.pyplot as plt
+
+tickerSymbol = 'GOOGL'
+startDate = '2023-01-01'
+endDate = '2023-12-31'
+
+data = yf.download(tickerSymbol, start=startDate, end=endDate)
+
+plt.figure(figsize=(10, 6))
+plt.plot(data['Close'], label='Alphabet Inc. Closing Price')
+plt.xlabel('Date')
+plt.ylabel('Closing Price (USD)')
+plt.title('Alphabet Inc. Stock Price (' + startDate + ' - ' + endDate + ')')
+plt.legend()
+plt.grid(True)  
+plt.show()
