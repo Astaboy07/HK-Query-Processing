@@ -1,0 +1,9 @@
+#Q3. Replace Missing Spaces with Least Frequent Character
+
+def replace_missing_spaces(string):
+    char_count = pd.Series(list(string.replace(" ", ""))).value_counts()
+    least_freq_char = char_count.idxmin()
+    return string.replace(" ", least_freq_char)
+
+input_string = "a b c d a b c"
+print(replace_missing_spaces(input_string))
