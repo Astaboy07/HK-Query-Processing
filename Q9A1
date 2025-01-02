@@ -1,0 +1,11 @@
+#Q9. Spearman Rank Correlation(package scipy)
+
+from scipy.stats import spearmanr
+
+def spearman_rank_correlation(x, y):
+    correlation, _ = spearmanr(x, y)
+    return correlation
+
+study_hours = [2, 4, 6, 8, 10]
+exam_scores = [50, 55, 65, 75, 85]
+print(spearman_rank_correlation(study_hours, exam_scores))
