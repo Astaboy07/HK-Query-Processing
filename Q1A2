@@ -1,0 +1,11 @@
+#Q2. Find Positions Neighbored by Smaller Values
+
+def find_positions(series):
+    result = []
+    for i in range(1, len(series) - 1):
+        if series[i] > series[i - 1] and series[i] > series[i + 1]:
+            result.append(i)
+    return result
+
+s = pd.Series([1, 3, 7, 1, 2, 6, 3])
+print(find_positions(s))
