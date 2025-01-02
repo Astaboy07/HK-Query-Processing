@@ -1,0 +1,11 @@
+#Q8. Pearson’s Coefficient 
+
+def pearsons_coefficient(x, y):
+    x = np.array(x)
+    y = np.array(y)
+    rxy = np.corrcoef(x, y)[0, 1]
+    return rxy
+
+x = [6, 8, 10]
+y = [12, 10, 20]
+print(pearsons_coefficient(x, y))
