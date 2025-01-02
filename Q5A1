@@ -1,0 +1,8 @@
+#Q5. Find All Sundays of a Year
+
+def sundays_of_year(year):
+    all_dates = pd.date_range(start=f'{year}-01-01', end=f'{year}-12-31')
+    sundays = all_dates[all_dates.dayofweek == 6]
+    return sundays
+
+print(sundays_of_year(2024))
