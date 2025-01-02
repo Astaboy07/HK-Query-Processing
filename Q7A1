@@ -1,0 +1,12 @@
+#Q7. Stack Series Vertically and Horizontally
+
+def stack_series(series1, series2):
+    vertical = pd.concat([series1, series2], axis=0)
+    horizontal = pd.concat([series1, series2], axis=1)
+    return vertical, horizontal
+
+s1 = pd.Series([1, 2, 3])
+s2 = pd.Series([4, 5, 6])
+vertical, horizontal = stack_series(s1, s2)
+print("Vertical:\n", vertical)
+print("Horizontal:\n", horizontal)
