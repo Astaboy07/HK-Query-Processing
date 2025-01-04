@@ -1,4 +1,0 @@
-Project Description
-Title: Movie Insights: Search, Summarize, and Discover Cast Details
-
-This project is an interactive Python application that utilizes the TMDb API to provide detailed information about movies. Users can input the name of a movie, and the application retrieves its summary, cast details, and other relevant information directly from the TMDb database. The application also incorporates fuzzy matching using FuzzyWuzzy to handle spelling errors and approximate matches, ensuring users can easily find the movie they're looking for even if the input is not perfectly accurate..
